@@ -1,0 +1,10 @@
+cameraID camSerialNumber result testCase statusCodes
+cam 1    (1234)          pass   1       working fine
+cam 2    (4321)          error  1       cases: x061, x081, x061, x011
+cam 2    (4321)          error  2       cases: x062, x081, x051, x011
+cam 2    (4321)          error  3       cases: x062, x083, x051, x011
+cam 1    (1234)          err    2       cases: x001, x002, x003, x004
+cam 1    (1234)          error  2       cases: x001, x002, x003, x004, x005
+cam 1    (1234)          pass   2       working fine
+cam 3    (1234)          pass   1       working fine
+cam 4    (1234)          pass   1       working fine

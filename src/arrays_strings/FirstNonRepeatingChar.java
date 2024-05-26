@@ -46,6 +46,7 @@ public class FirstNonRepeatingChar {
                 return i;
             }
         }
+        
         return -1;
     }
 }

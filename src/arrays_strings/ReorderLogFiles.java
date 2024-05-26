@@ -1,6 +1,7 @@
 package arrays_strings;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class ReorderLogFiles {
     public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class ReorderLogFiles {
         Arrays.sort(logs, (log1,log2)->{
             //log1 < log2  -> -1
             //log1 == log2 ->  0
-            //log1 < log2  ->  1
+            //log1 > log2  ->  1
             String id1 = ((String) log1).substring(0, ((String) log1).indexOf(" "));
             String id2 = ((String) log2).substring(0, ((String) log2).indexOf(" "));
             String main1 = ((String) log1).substring(((String) log1).indexOf(" ")+1);
@@ -25,8 +26,14 @@ public class ReorderLogFiles {
                 if(value==0)
                     return id1.compareTo(id2);
                 return value;
+            }else if(isDigit1 == isDigit2){
+                return 0;
+            }else if(isDigit1!=isDigit2){
+                return 1;
+            }else{
+                return -1;
             }
-            return isDigit1?(isDigit2? 0 : 1) :-1;
+            //return isDigit1?(isDigit2? 0 : 1) :-1;
         });
         return logs;
     }

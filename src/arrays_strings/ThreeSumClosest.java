@@ -33,7 +33,7 @@ public class ThreeSumClosest {
         int minDiff = Integer.MAX_VALUE;
         Arrays.sort(arr);
         for (int i = 0; i < arr.length; i++) {
-            int l = i+1, r = arr.length - 1;
+            int l = i + 1, r = arr.length - 1;
             while (l < r) {
                 int sum = arr[i] + arr[l] + arr[r];
                 if (sum == target)
@@ -46,6 +46,31 @@ public class ThreeSumClosest {
                 if (diff < minDiff) {
                     ans = sum;
                     minDiff = diff;
+                }
+            }
+        }
+        return ans;
+    }
+
+    public static int optimal(int arr[], int target) {
+        int ans = arr[0] + arr[1] + arr[2];
+        int minDiff = Integer.MAX_VALUE;
+        Arrays.sort(arr);
+
+        for (int i = 0; i < arr.length; i++) {
+            int l = i + 1, r = arr.length - 1;
+            while (l < r) {
+                int sum = arr[i]+arr[l]+arr[r];
+                if(sum==target)
+                    return sum;
+                else if(sum<target)
+                    l++;
+                else
+                    r--;
+                int diff = Math.abs(sum-target);
+                if(diff<minDiff){
+                    minDiff = diff;
+                    ans= sum;
                 }
             }
         }

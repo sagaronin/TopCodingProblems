@@ -11,14 +11,14 @@ public class MostCommonWord {
     }
 
     public static String mostCommonWordBruteForce(String paragraph, String banned[]) {
-        HashSet<String> hashset = new HashSet<>();
+        HashSet<String> bannedSet = new HashSet<>();
         HashMap<String, Integer> map = new HashMap<>();
         for (String string : banned) {
-            hashset.add(string);
+            bannedSet.add(string);
         }
         String tokens[] = paragraph.toLowerCase().split("\\W+");
         for (String string : tokens) {
-            if (!hashset.contains(string))
+            if (!bannedSet.contains(string))
                 map.put(string, map.getOrDefault(string, 0) + 1);
         }
         int max=0;

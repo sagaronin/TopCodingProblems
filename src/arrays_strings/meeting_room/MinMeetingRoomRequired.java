@@ -22,7 +22,7 @@ class Interval {
 
 public class MinMeetingRoomRequired {
     /*
-     * Given an array of meeting time intervals intervals where intervals[i] =
+     * Given an array of meeting time intervals where intervals[i] =
      * [starti, endi], return the minimum number of conference rooms required.
      * 
      * Example 1:
@@ -73,7 +73,7 @@ public class MinMeetingRoomRequired {
         System.out.println(intervals);
         //priority queue is a DS which always holds value in ascending order
         // we will be using it to hold the end times of meetings
-        //hence at top of this queue we will always have a meetign which is going  to end next.
+        //hence at top of this queue we will always have a meeting which is going  to end next.
         PriorityQueue<Integer> p = new PriorityQueue<>();
         p.add(intervals.get(0).end);
         for (int i = 1; i < intervals.size(); i++) {

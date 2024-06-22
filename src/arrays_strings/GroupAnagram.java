@@ -26,4 +26,18 @@ public class GroupAnagram {
         }        
         return new ArrayList<>(map.values());
     }
+    public static List<List<String>> optimized(String[] strs) {
+        Map<String, List<String>> map = new HashMap<>();
+        for (String str : strs) {
+            char temp[] = str.toCharArray();
+            Arrays.sort(temp);
+            String tempStr = String.valueOf(temp);
+            if(map.get(tempStr)==null){
+                map.put(tempStr,new ArrayList<String>(Arrays.asList(str)));
+            }else{
+                map.get(tempStr).add(str);
+            }
+        }
+        return new ArrayList<>(map.values());
+    }
 }

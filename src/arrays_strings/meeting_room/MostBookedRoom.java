@@ -25,8 +25,8 @@ Output: 0
  */
 public class MostBookedRoom {
     public static void main(String[] args) {
-        int interval[][]={{0,10},{1,5},{2,7},{3,4}};
-        System.out.println("Output: "+mostBookedRoom2(interval,2));
+        int interval[][]={{3,4},{0,10},{2,7},{1,5},{2,7}};
+        System.out.println("Output[Meeting room number]: "+mostBookedRoom2(interval,2));
 
     }
     public static int mostBookedRoom(int[][] intervals, int n) {
@@ -65,7 +65,7 @@ public class MostBookedRoom {
         }
         int maxMeetingCount = 0, maxMeetingCountRoom=0;
         for (int i = 0; i < n; i++) {
-            System.out.println("Max meeting count for room "+i+" is/are : "+meetingCount[i]);
+            System.out.println("Max meeting count for room "+(i+1)+" is/are : "+meetingCount[i]);
             if(meetingCount[i]>maxMeetingCount){
                 maxMeetingCount = meetingCount[i];
                 maxMeetingCountRoom = i;
@@ -106,10 +106,10 @@ public class MostBookedRoom {
         }
         int maxMeetingCount = 0, maxMeetingCountRoom=0;
         for (int i = 0; i < n; i++) {
-            System.out.println("Max meeting count for room "+i+" is/are : "+meetingCount[i]);
+            System.out.println("Max meeting count for room "+(i+1)+" is/are : "+meetingCount[i]);
             if(meetingCount[i] > maxMeetingCount){
                 maxMeetingCount = meetingCount[i];
-                maxMeetingCountRoom = i;
+                maxMeetingCountRoom = i+1;
             }
         }
         return maxMeetingCountRoom;

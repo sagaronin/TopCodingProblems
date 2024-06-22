@@ -36,17 +36,17 @@ public class ThreeSumClosest {
             int l = i + 1, r = arr.length - 1;
             while (l < r) {
                 int sum = arr[i] + arr[l] + arr[r];
-                if (sum == target)
-                    return sum;
-                if (sum < target)
-                    l++;
-                else
-                    r--;
                 int diff = Math.abs(sum - target);
                 if (diff < minDiff) {
                     ans = sum;
                     minDiff = diff;
                 }
+                if (sum == target)
+                    return sum;
+                if (sum < target)
+                    l++;
+                else
+                    r--;                
             }
         }
         return ans;

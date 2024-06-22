@@ -3,11 +3,12 @@ package arrays_strings;
 public class MinimumWindowSubstring {
     public static void main(String[] args) {
         String str = "cabwefgewcwaefgcf", sub = "cae";
-        //System.out.println(
-                //"Minimum Window Substring (Brute Force) : "
-                    //    + MinimumWindowSubstring.minimumWindowSubstringBruteForce(str, sub));
+        // System.out.println(
+        // "Minimum Window Substring (Brute Force) : "
+        // + MinimumWindowSubstring.minimumWindowSubstringBruteForce(str, sub));
         System.out.println(
-                "Minimum Window Substring (Better) : " + MinimumWindowSubstring.minimumWindowSubstringBetterRetry(str, sub));
+                "Minimum Window Substring (Better) : "
+                        + MinimumWindowSubstring.minimumWindowSubstringBetterRetry(str, sub));
     }
 
     public static String minimumWindowSubstringBruteForce(String str, String sub) {
@@ -41,23 +42,23 @@ public class MinimumWindowSubstring {
 
     public static String minimumWindowSubstringBetter(String str, String sub) {
         int minLength = Integer.MAX_VALUE;
-        int startIndex = -1, l=0,r=0, count=0;
+        int startIndex = -1, l = 0, r = 0, count = 0;
         int hash[] = new int[256];
         for (int k = 0; k < sub.length(); k++) {
             hash[sub.charAt(k)] = hash[sub.charAt(k)] + 1;
         }
-        while(r<str.length()){
-            if(hash[str.charAt(r)]>0){
+        while (r < str.length()) {
+            if (hash[str.charAt(r)] > 0) {
                 count++;
             }
             hash[str.charAt(r)]--;
-            while(count==sub.length()){
-                if((r-l+1)<minLength){
-                    minLength = r-l+1;
-                    startIndex =l;
+            while (count == sub.length()) {
+                if ((r - l + 1) < minLength) {
+                    minLength = r - l + 1;
+                    startIndex = l;
                 }
                 hash[str.charAt(l)]++;
-                if(hash[str.charAt(l)]>0){
+                if (hash[str.charAt(l)] > 0) {
                     count--;
                 }
                 l++;
@@ -72,28 +73,28 @@ public class MinimumWindowSubstring {
 
     public static String minimumWindowSubstringBetterRetry(String str, String sub) {
         int minLength = Integer.MAX_VALUE;
-        int startIndex =-1;
-        int count=0;
-        int l=0,r=0;
+        int startIndex = -1;
+        int count = 0;
+        int l = 0, r = 0;
         int hash[] = new int[256];
         for (int i = 0; i < sub.length(); i++) {
-            hash[sub.charAt(i)] = hash[sub.charAt(i)]+1;
+            hash[sub.charAt(i)] = hash[sub.charAt(i)] + 1;
         }
-        while(r<str.length()){
-            if(hash[str.charAt(r)]>0){
+        while (r < str.length()) {
+            if (hash[str.charAt(r)] > 0) {
                 count++;
             }
             hash[str.charAt(r)]--;
-            while(count==sub.length()){
-                if((r-l+1)<minLength){
-                    minLength =r-l+1;
-                    startIndex=l;
+            while (count == sub.length()) {
+                if ((r - l + 1) < minLength) {
+                    minLength = r - l + 1;
+                    startIndex = l;
                 }
                 hash[str.charAt(l)]++;
-                if(hash[str.charAt(l)]>0){
+                if (hash[str.charAt(l)] > 0) {
                     count--;
                 }
-                l++;                
+                l++;
             }
             r++;
         }
@@ -101,5 +102,35 @@ public class MinimumWindowSubstring {
             return "";
         }
         return str.substring(startIndex, startIndex + minLength);
+    }
+
+    public static String minWindowsub(String str, String t) {
+        int count = 0, sIndex = -1, l = 0, r = 0, minLength = Integer.MAX_VALUE;
+        int hash[] = new int[256];
+        if (str.length() < t.length())
+            return "";
+        for (int i = 0; i < t.length(); i++) {
+            hash[t.charAt(i)] = hash[t.charAt(i)] + 1;
+        }
+        while (r < str.length()) {
+            if (hash[str.charAt(r)] > 0) {
+                count++;
+            }
+            hash[str.charAt(r)]--;
+            while(count==t.length()){
+                if(r-l+1<minLength){
+                    minLength = r-l+1;
+                    sIndex =l;
+                }
+                hash[str.charAt(l)]++;
+                if(hash[str.charAt(l)]>0){
+                    count--;
+                }
+                l++;
+            }
+            r++;
+        }
+
+        return str.substring(sIndex, sIndex+minLength);
     }
 }

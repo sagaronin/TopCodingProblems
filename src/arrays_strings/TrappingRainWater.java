@@ -5,7 +5,6 @@ public class TrappingRainWater {
         int arr[] = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
         System.out.println("Max trapped rainwater is(Brute Force) : " + TrappingRainWater.trappingRWBruteForce(arr));
         System.out.println("Max trapped rainwater is(Better) : " + TrappingRainWater.trappingRWBetter(arr));
-        System.out.println("Max trapped rainwater is(Optimal) : " + TrappingRainWater.trappingRWBruteForce(arr));
     }
 
     public static int trappingRWBruteForce(int[] arr) {

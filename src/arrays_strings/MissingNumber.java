@@ -8,7 +8,7 @@ public class MissingNumber {
         System.out.println("Missing Number (Optimal) : "+MissingNumber.missingNumberOptimal(arr));
     }   
     public static int missingNumberBrute(int[] arr) {
-        for (int i = 0; i <= arr.length; i++) {
+        for (int i = 1; i <= arr.length; i++) {// for 1 to n numbers
             int found=0;
             for (int j = 0; j < arr.length; j++) {
                 if(arr[j]==i){

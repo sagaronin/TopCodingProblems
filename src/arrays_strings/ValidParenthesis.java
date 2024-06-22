@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class ValidParenthesis {
     public static void main(String[] args) {
-        String parenthesis = "";
+        String parenthesis = ")";
         System.out.println("Answer : " + ValidParenthesis.validParenthesisBrute(parenthesis));
     }
 
@@ -20,7 +20,6 @@ public class ValidParenthesis {
                 stack.push('}');
             else if (ch == '[')
                 stack.push(']');
-
             else if(!stack.isEmpty() && stack.pop()!=ch)
                 return false;
         }

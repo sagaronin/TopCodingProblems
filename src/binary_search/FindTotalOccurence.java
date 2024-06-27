@@ -1,7 +1,5 @@
 package binary_search;
 
-import java.util.Arrays;
-
 //find total occurence of an element in sorted array
 public class FindTotalOccurence {
     public static void main(String[] args) {

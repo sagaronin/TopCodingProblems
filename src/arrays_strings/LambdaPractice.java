@@ -10,7 +10,7 @@ public class LambdaPractice {
                 //Compares its two arguments for order. 
                 //Returns a negative integer, zero, or a positive integer 
                 //as the first argument is 
-                //less than, equal to, or greater than the second.
+                //less than, equal to, or greater than the second respectively.
                 if (name1.length() > name2.length())
                     return 1;// return 1 means swap
                 else if (name1.length() < name2.length())

@@ -6,7 +6,7 @@ import java.util.Set;
 public class LongestSubstringWithoutRepeatingChar {
 
     public static void main(String[] args) {
-        String sample = "pwwwwkewp";
+        String sample = "sudbamdqual";
         System.out.println("Longest Substring Without Repeating Characters(BruteForce) : "
                 +
                 LongestSubstringWithoutRepeatingChar.logenstSubstringWithoutRepeatingCharBruteForce(sample));
@@ -85,7 +85,7 @@ public class LongestSubstringWithoutRepeatingChar {
 
     public static int optimized(String str) {
         // pwwwkewp
-        int max = 0, l = 0, r = 0;
+        int max = 0, l = 0, r = 0, startIndex=-1;
         if (str.isEmpty() || str == null)
             return max;
 
@@ -97,10 +97,14 @@ public class LongestSubstringWithoutRepeatingChar {
                 l++;
             }
             charCount.add(ch);
-            max = Math.max(max, r - l + 1);
+            if ((r - l + 1) > max) {
+                max = r - l + 1;
+                startIndex=l;
+            }
+            
             r++;
         }
-
+        System.out.println("Substring is: "+str.substring(startIndex,startIndex+max));
         return max;
     }
 }

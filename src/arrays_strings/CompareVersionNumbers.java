@@ -7,7 +7,9 @@ public class CompareVersionNumbers {
         // Otherwise, return 0.
         String version1 = "2.5.33", version2 = "2.05.033.0.0.0";
         System.out.println(
-                "Comparison output: " + CompareVersionNumbers.compareVersionNumbersOptimal(version1, version2));
+                 "Comparison output: " + CompareVersionNumbers.compareVersionNumbersOptimal(version1, version2));
+                System.out.println(
+                "Comparison output retry: " + CompareVersionNumbers.OptimalRetry(version1, version2));
     }
 
     private static int compareVersionNumbersOptimal(String version1, String version2) {
@@ -47,10 +49,14 @@ public class CompareVersionNumbers {
                 i++;
             }
             // get number before '.' from string version2
-            while (j < n && version2.charAt(j) != '.') {
+            while (j < m && version2.charAt(j) != '.') {
                 n2 = n2 * 10 + (version2.charAt(j) - '0');
                 j++;
             }
+            // compare the n1 and n2
+            // If version1 < version2, return -1.
+            // If version1 > version2, return 1.
+            // Otherwise, return 0.
             if (n1 < n2)
                 return -1;
             else if (n1 > n2)

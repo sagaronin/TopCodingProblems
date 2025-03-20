@@ -35,7 +35,7 @@ public class MeetingsInOneRoom {
         }
         Collections.sort(meetings, ( m1, m2)->{
             if(m1.end > m2.end)
-                return 1;
+                return 1;//swap
             else if(m1.end < m2.end)
                 return -1;
             else if(m1.position < m2.position)
@@ -47,10 +47,10 @@ public class MeetingsInOneRoom {
 
         List<Integer> meetingOrder = new ArrayList<>();
         meetingOrder.add(meetings.get(0).position);
-        int limit = meetings.get(0).end;
+        int nextFreeTime = meetings.get(0).end;
         for (int i = 1; i < n; i++) {
-            if(meetings.get(i).start > limit){
-                limit = meetings.get(i).end;
+            if(meetings.get(i).start > nextFreeTime){
+                nextFreeTime = meetings.get(i).end;
                 meetingOrder.add(meetings.get(i).position);
             }
         }

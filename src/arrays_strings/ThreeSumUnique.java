@@ -72,9 +72,9 @@ public class ThreeSumUnique {
             int r = arr.length - 1;
             while (l < r) {
                 int sum = arr[i] + arr[l] + arr[r];
-                if (sum < 0) {// sum is greater than zero so reduce the value from right
+                if (sum < 0) {// sum is smaller than zero so increment the value from left
                     l++;
-                } else if (sum > 0) {// sum is smaller than zero so increment the value from left
+                } else if (sum > 0) {// sum is greater than zero so reduce the value from right
                     r--;
                 } else {
                     // if sum is same means we found the element

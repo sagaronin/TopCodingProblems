@@ -56,7 +56,6 @@ public class ThreeSumClosest {
         int ans = arr[0] + arr[1] + arr[2];
         int minDiff = Integer.MAX_VALUE;
         Arrays.sort(arr);
-
         for (int i = 0; i < arr.length; i++) {
             int l = i + 1, r = arr.length - 1;
             while (l < r) {

@@ -1,7 +1,6 @@
 package arrays_strings;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class ReorderLogFiles {
     public static void main(String[] args) {

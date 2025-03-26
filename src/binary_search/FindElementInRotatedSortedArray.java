@@ -15,7 +15,7 @@ public class FindElementInRotatedSortedArray {
                 return mid;
             }
             /*
-             Basic ide over here is to two step
+             Basic idea over here is to two step
              1. Find the half which is sorted
              2. Now you have the sorted half. it will be easier to check within the bounds of sorted
              half where exactly is the target element.

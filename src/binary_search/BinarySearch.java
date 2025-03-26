@@ -7,7 +7,7 @@ public class BinarySearch {
         //and after that you try to find the target number by confining your search space
         //using low and high bounds. you take mid and compare it with target, if target is greater than mid, then you update your search space
         //by updating your lower bound to be mid+1, else you update your high bound to be mid-1.
-        int arr[] = { 3, 4, 6, 7, 9, 12, 16, 17 };
+        int arr[] = { 3 };
         System.out.println("Element: " + bsearch(arr, 6));
         System.out.println("Element: " + bsearchRecursive(arr, 0, arr.length-1, 13));
     }

@@ -53,7 +53,7 @@ public class MinBouquet {
         if (noOfBouquets * adjacent > arr.length)
             return -1;
         int maxMin[] = getMaxMinValue(arr);
-        int low = maxMin[1], high = maxMin[0];
+        int  high = maxMin[0],low = maxMin[1];
         int ans = -1;
         while (low <= high) {
             int mid = (low + high) / 2;

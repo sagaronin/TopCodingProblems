@@ -47,7 +47,7 @@ public class SingleElementInSortedDuplicatesArray {
             // also check which half you are on
             // arr[mid-1]==arr[mid] : this means you are on left left half when mid is odd
             // arr[mid]==arr[mid+1] : this means you are on left half when mid is even
-            else if ((mid % 2 == 1 && arr[mid - 1] == arr[mid]) || (mid % 2 == 0 && arr[mid] == arr[mid + 1]))
+            else if ((mid % 2 == 1 && arr[mid] == arr[mid-1]) || (mid % 2 == 0 && arr[mid] == arr[mid + 1]))
                 low = mid + 1;
             else
                 high = mid - 1;
